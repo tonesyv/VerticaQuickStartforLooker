@@ -3,15 +3,14 @@
   layout: grid
   rows: 
     - elements: [on_time_delivery_rate, quantity_accuracy_rate, perfect_order_rate]
-      height: 200
+      height: 180
     - elements: [year_over_year_comparison, Metric_by_Store_Location]
       height: 400
     - elements: [top_vendors_on_time_delivery_rate, top_vendors_quantity_accuracy_rate, top_vendors_perfect_order_rate]
-      height: 200
+      height: 230
     
 
   filters:
-      
   - name: date
     title: "Order delivered date"
     type: date_filter
@@ -33,7 +32,6 @@
     
   
   elements:
-  
   - name: on_time_delivery_rate
     title: On-time Delivery Rate
     type: single_value
@@ -118,7 +116,6 @@
     column_limit: ''
 
       
-    
   - name: year_over_year_comparison
     title: Year over Year Comparison
     type: looker_area
@@ -146,6 +143,7 @@
     y_axis_min:
     y_axis_max:
     hide_points: true
+   
    
   - name: Metric_by_Store_Location
     title: Metric by Store Location
