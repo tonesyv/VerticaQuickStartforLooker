@@ -28,7 +28,7 @@
     type: field_filter
     explore: store_orders_fact
     field: store_orders_fact.measure_type
-    default_value: "Avg Days to Deliver"
+    default_value: "Avg Quantity Delivered"
     
   
   elements:

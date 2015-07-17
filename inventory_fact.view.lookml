@@ -29,3 +29,11 @@
   - measure: average_qty_in_stock
     type: avg
     sql: ${TABLE}.qty_in_stock
+
+  - measure: max_qty_in_stock
+    type: max
+    sql: ${TABLE}.qty_in_stock
+    
+  - measure: min_qty_in_stock
+    type: min
+    sql: ${TABLE}.qty_in_stock

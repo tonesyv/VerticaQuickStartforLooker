@@ -86,3 +86,6 @@
     type: count
     drill_fields: [calendar_month_name]
 
+  - dimension: min_date
+    type: date
+    sql: min(${TABLE}.date_date)
