@@ -68,7 +68,7 @@
     
   - name: online_sales_by_year
     title: 'Online Sales Performance (YoY)'
-    type: looker_area
+    type: looker_line
     model: vmart1
     explore: online_sales_fact
     dimensions: [date_dimension_sales.calendar_month_number_in_year]
@@ -85,7 +85,6 @@
     width: 
     height:
     legend_align:
-    stacking: normal
     x_axis_label: 'Month Number'
     x_axis_datetime: true
     x_axis_datetime_label:
@@ -96,10 +95,13 @@
     y_axis_min:
     y_axis_max:
     hide_points: true
+    colors: ['#353b49','#776fdf','#49cec1','#e9b404','#dc7350','#ed6168']
+  
+    
     
   - name: store_sales_by_year
     title: 'Store Sales Performance (YoY)'
-    type: looker_area
+    type: looker_line
     model: vmart1
     explore: store_sales_fact
     dimensions: [date_dimension.calendar_month_number_in_year]
@@ -116,7 +118,6 @@
     width:
     height:
     legend_align:
-    stacking: normal
     x_axis_label: 'Month Number'
     x_axis_datetime: true
     x_axis_datetime_label:
@@ -126,6 +127,7 @@
     y_axis_labels:
     y_axis_min:
     y_axis_max:
+    colors: ['#353b49','#776fdf','#49cec1','#e9b404','#dc7350','#ed6168']
   
   - name: top_online_customers
     title: "Top 10 Online Customers"

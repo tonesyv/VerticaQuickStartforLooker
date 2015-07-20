@@ -115,7 +115,7 @@
       
   - name: year_over_year_comparison
     title: Year over Year Comparison
-    type: looker_area
+    type: looker_line
     model: vmart1
     explore: store_orders_fact
     dimensions: [store_orders_fact.date_delivered_year, store_orders_fact.date_delivered_month_num]
@@ -129,7 +129,6 @@
     limit: 500
     column_limit: ''
     legend_align:
-    stacking: normal
     x_axis_label: Month Number
     x_axis_datetime: true
     x_axis_datetime_label:
@@ -140,6 +139,8 @@
     y_axis_min:
     y_axis_max:
     hide_points: true
+    colors: ['#776fdf','#49cec1','#e9b404','#dc7350','#ed6168']
+
    
    
   - name: Metric_by_Store_Location
@@ -160,7 +161,7 @@
     map_projection: ''
     show_view_names: true
     quantize_colors: false
-    colors: []
+    colors: ['#008000']
     loading: false
      
    

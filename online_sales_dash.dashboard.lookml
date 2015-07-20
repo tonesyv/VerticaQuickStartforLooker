@@ -107,6 +107,8 @@
     y_axis_min:
     y_axis_max:
     hide_points: true
+    colors: ['#635189','#1ea8df','#49cec1','#e9b404','#dc7350','#ed6168']
+   
     
     
   - name: regional_sales
@@ -129,7 +131,7 @@
     map_projection: ''
     show_view_names: true
     quantize_colors: false
-    colors: []
+    colors: ['#008000']
     loading: false
   
   - name: top_10_customers
@@ -197,6 +199,8 @@
     column_limit: ''
     show_view_names: true
     inner_radius: 50
+    colors: ['#635189','#49cec1','#e9b404','#dc7350','#ed6168']
+   
 
   - name: call_center_performance
     title: "Call Center Performance in Online Sales"

@@ -103,18 +103,18 @@
     sql: ${quantity_delivered} = ${quantity_ordered}
 
   - measure: average_quantity_ordered
-    type: avg
+    type: average
     #sql: ${TABLE}.quantity_ordered
     sql: ${quantity_ordered}
     #value_format: '$#,##0.00'
 
   - measure: average_quantity_delivered
-    type: avg
+    type: average
     #sql: ${TABLE}.quantity_delivered
     sql: ${quantity_delivered}
   
   - measure: average_quantity_in_stock
-    type: avg
+    type: average
     sql: ${quantity_in_stock}
   
   - measure: average_days_to_deliver

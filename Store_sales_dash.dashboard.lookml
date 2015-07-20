@@ -109,7 +109,6 @@
     width: 
     height:
     legend_align:
-    stacking: normal
     x_axis_label: 'Month Number'
     x_axis_datetime: true
     x_axis_datetime_label:
@@ -119,7 +118,9 @@
     y_axis_labels:
     y_axis_min:
     y_axis_max:
-    hide_points: true    
+    hide_points: true 
+    colors: ['#635189','#1ea8df','#49cec1','#e9b404','#dc7350','#ed6168']
+
     
   - name: regional_store_sales
     title: Regional Store Sales 
@@ -141,7 +142,7 @@
     map_projection: ''
     show_view_names: true
     quantize_colors: false
-    colors: []
+    colors: ['#008000']
     loading: false
       
   - name: top_10_customers
@@ -210,6 +211,8 @@
     column_limit: ''
     show_view_names: true
     inner_radius: 40
+    colors: ['#635189','#49cec1','#e9b404','#dc7350','#ed6168']
+
     
   - name: top_10_employees
     title: Top 10 Employees in Store Sales
@@ -241,4 +244,4 @@
     show_x_axis_ticks: true
     x_axis_scale: auto
     show_null_labels: false
-      
+    

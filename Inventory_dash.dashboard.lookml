@@ -5,12 +5,10 @@
   rows: 
     - elements: [average_quantity_in_stock, min_quantity_in_stock, max_quantity_in_stock]
       height: 150
-    - elements: [total_inventory_overtime]
+    - elements: [total_inventory_overtime, Breakdown_by_warehouse_location]
       height: 400
-    - elements: [breakdown_by_department, Breakdown_by_warehouse_location]
-      height: 300
-    - elements: [breakdown_by_category, Breakdown_by_warehouse_name]
-      height: 300
+    - elements: [breakdown_by_category, breakdown_by_department, Breakdown_by_warehouse_name]
+      height: 400
 
 
   filters:
@@ -115,8 +113,8 @@
     show_null_points: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-
-  
+    
+    
   - name: Breakdown_by_warehouse_name
     title: Inventory Breakdown by Warehouse Name 
     type: looker_bar
@@ -180,7 +178,7 @@
     quantize_colors: false
     map: usa
     map_projection: ''
-    colors: []
+    colors: ['#008000']
     loading: false
 
 
@@ -198,7 +196,6 @@
     limit: 500
     column_limit: ''
     show_view_names: false
-    stacking: normal
     show_value_labels: false
     show_x_axis_label: true
     show_x_axis_ticks: true
@@ -214,3 +211,5 @@
     interpolation: linear
     point_style: none
     y_axis_tick_density_custom: 5
+    colors: ['#776fdf','#49cec1','#e9b404','#dc7350','#ed6168']
+  
