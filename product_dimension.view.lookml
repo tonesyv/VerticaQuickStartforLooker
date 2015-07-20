@@ -95,3 +95,6 @@
     type: count
     drill_fields: []
 
+  - measure: avg_competitor_price
+    type: avg
+    sql: ${TABLE}.average_competitor_price

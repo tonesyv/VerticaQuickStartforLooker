@@ -4,7 +4,6 @@
   rows: 
     - elements: [online_sales_yoy_comparison, store_sales_yoy_comparison]
       height: 400
- 
     - elements: [top_10_products_online, top_10_products_store]
       height: 400
  
@@ -18,9 +17,9 @@
 #    default_value: last 2 years
 
   - name: date
-    title: "Sales Date"
+    title: "Sales period"
     type: date_filter
-    #default_value: how to select 'is in range'
+    default_value: 2003/01/01 to 2007/12/31
     
   - name: measure_type
     title: "Sales Measure"
@@ -39,7 +38,7 @@
   elements:
   
   - name: online_sales_yoy_comparison
-    title: Online Sales YOY Comparison
+    title: "Online Sales Year over Year Comparison"
     type: looker_line
     model: vmart1
     explore: online_sales_fact
@@ -64,7 +63,7 @@
     width: 12
     
   - name: store_sales_yoy_comparison
-    title: Store Sales YOY Comparison
+    title: "Store Sales Year over Year Comparison"
     type: looker_line
     model: vmart1
     explore: store_sales_fact
@@ -74,7 +73,7 @@
     filters:
       store_sales_fact.transaction_type: '"purchase"'
     listen: 
-      date: date_dimensions.date_date
+      date: date_dimension.date_date
       measure_type: store_sales_fact.measure_type
       product_type: product_dimension.category_description    
     sorts: [date_dimension.date_month_num]
@@ -89,7 +88,7 @@
     width: 12
     
   - name: top_10_products_online
-    title: Top 10 product department in Online sales
+    title: "Top 10 Products in Online sales"
     type: looker_bar
     model: vmart1
     explore: online_sales_fact
@@ -98,7 +97,7 @@
     filters:
       online_sales_fact.transaction_type: '"purchase"'
     listen: 
-      date: date_dimension.date_date
+      date: date_dimension_sales.date_date
       measure_type: online_sales_fact.measure_type
       product_type: product_dimension.category_description    
     sorts: [online_sales_fact.measure_total desc]
@@ -120,7 +119,7 @@
     show_null_labels: false
     
   - name: top_10_products_store
-    title: Top 10 product department in Store sales
+    title: "Top 10 Products in Store Sales"
     type: looker_bar
     model: vmart1
     explore: store_sales_fact

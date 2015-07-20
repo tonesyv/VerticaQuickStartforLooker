@@ -3,36 +3,25 @@
   layout: grid
   rows: 
     - elements: [total_online_sales, total_store_sales]
-      #width: 6
       height: 190
- 
     - elements: [online_sales_by_year, store_sales_by_year]
       height: 400
-
     - elements: [top_online_customers, top_store_customers]
+      #width: 300
       height: 400
  
     
-
   filters:
-      
-#  - name: date
-#    title: "Date"
-#    type: date_filter
-#    default_value: last 2 years
-
   - name: date
-    title: "Sales Date"
+    title: "Sales period"
     type: date_filter
-    #default_value: how to select 'is in range'
-    
+    default_value: 2003/01/01 to 2007/12/31
   - name: customer_type
     title: "Customer type"
     type: field_filter
     explore: store_sales_fact # create a customer explore
     field: customer_dimension.customer_type
     #default_value:
-    
   - name: measure_type
     title: "Sales Measure"
     type: field_filter
@@ -42,7 +31,6 @@
     
 
   elements:
-  
   - name: total_online_sales
     title: 'Total Online Sales'
     type: single_value
@@ -50,10 +38,10 @@
     explore: online_sales_fact
     measures: [online_sales_fact.measure_total]
     filters:
-      store_sales_fact.transaction_type: '"purchase"'
+      online_sales_fact.transaction_type: '"purchase"'
     listen: 
       customer_type: customer_dimension.customer_type
-      date: date_dimension.date_date
+      date: date_dimension_sales.date_date
       measure_type: online_sales_fact.measure_type
       #product_type: product_dimension.store_department_description
     limit: 500
@@ -120,7 +108,7 @@
     measures: [store_sales_fact.count]
     sorts: [date_dimension.calendar_month_number_in_year]
     filters:
-      online_sales_fact.transaction_type: '"purchase"'
+      store_sales_fact.transaction_type: '"purchase"'
     listen: 
       date: date_dimension.date_date
       customer_type: customer_dimension.customer_type
@@ -141,7 +129,7 @@
     y_axis_max:
   
   - name: top_online_customers
-    title: Top 5 Online Customers
+    title: "Top 10 Online Customers"
     type: looker_bar
     model: vmart1
     explore: online_sales_fact
@@ -152,9 +140,8 @@
     listen: 
       customer_type: customer_dimension.customer_type
       measure_type: online_sales_fact.measure_type
-      product_type: product_dimension.department_description
     sorts: [online_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     show_null_points: true
     stacking: ''
@@ -172,7 +159,7 @@
     show_null_labels: false  
     
   - name: top_store_customers
-    title: Top 5 Store Customers
+    title: "Top 10 Store Customers"
     type: looker_bar
     model: vmart1
     explore: store_sales_fact
@@ -185,7 +172,7 @@
       date: date_dimension.date_date
       measure_type: store_sales_fact.measure_type
     sorts: [store_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     stacking: ''
     show_value_labels: false

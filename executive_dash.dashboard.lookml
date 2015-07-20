@@ -1,5 +1,5 @@
 - dashboard: executive_dash
-  title: Executive Dash
+  title: Executive Dashboard
   layout: grid
   rows: 
     - elements: [store_total, online_total]
@@ -14,10 +14,12 @@
     - elements: [order_rate]
       height: 400
       
+      
   filters:
-    
     - name: date
+      title: "Sales period"
       type: date_filter
+      default_value: 2003/01/01 to 2007/12/31
     - name: customer_type
       type: field_filter
       explore: store_sales_fact

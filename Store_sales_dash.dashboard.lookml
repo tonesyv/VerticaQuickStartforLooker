@@ -5,9 +5,10 @@
 
 
   filters:
-  
   - name: date
+    title: "Sales period"
     type: date_filter
+    default_value: 2003/01/01 to 2007/12/31
   - name: customer_type
     type: field_filter
     explore: store_sales_fact
@@ -23,12 +24,10 @@
     explore: store_sales_fact
     field: product_dimension.store_department_description
     
-    
 
   elements:
-
   - name: store_total
-    title: Store total
+    title: Store Sales total
     type: single_value
     model: vmart1
     explore: store_sales_fact
@@ -58,7 +57,7 @@
     show_null_labels: false
     font_size: medium
     
-  - name: add_a_unique_name_540
+  - name: store_sales_overtime
     title: Store Sales Performance Overtime
     type: looker_line
     model: vmart1
@@ -90,8 +89,40 @@
     point_style: none
     interpolation: linear
     
-  - name: add_a_unique_name_810
-    title: Store Sales Regional Sales
+  - name: store_sales_by_year
+    title: 'Store Sales Year over Year Comparison'
+    type: looker_area
+    model: vmart1
+    explore: store_sales_fact
+    dimensions: [date_dimension.calendar_month_number_in_year]
+    pivots: [date_dimension.calendar_year]
+    measures: [store_sales_fact.measure_total]
+    sorts: [date_dimension.calendar_month_number_in_year]
+    filters:
+      store_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      date: date_dimension.date_date
+      customer_type: customer_dimension.customer_type
+      measure_type: store_sales_fact.measure_type
+    sorts: [date_dimension.calendar_year_quarter]
+    limit: 500
+    width: 
+    height:
+    legend_align:
+    stacking: normal
+    x_axis_label: 'Month Number'
+    x_axis_datetime: true
+    x_axis_datetime_label:
+    x_axis_label_rotation:
+    y_axis_orientation:
+    y_axis_combined:
+    y_axis_labels:
+    y_axis_min:
+    y_axis_max:
+    hide_points: true    
+    
+  - name: regional_store_sales
+    title: Regional Store Sales 
     type: looker_geo_choropleth
     model: vmart1
     explore: store_sales_fact
@@ -113,8 +144,8 @@
     colors: []
     loading: false
       
-  - name: add_a_unique_name_731
-    title: Top 5 Store Customers
+  - name: top_10_customers
+    title: Top 10 Store Customers
     type: looker_bar
     model: vmart1
     explore: store_sales_fact
@@ -127,7 +158,7 @@
       date: date_dimension.date_date
       measure_type: store_sales_fact.measure_type
     sorts: [store_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     stacking: ''
     show_value_labels: false
@@ -143,7 +174,7 @@
     x_axis_scale: auto
     show_null_labels: false
         
-  - name: add_a_unique_name_778
+  - name: top_10_products
     title: Top 10 Products in Store Sales
     type: table
     model: vmart1
@@ -161,7 +192,7 @@
     column_limit: ''
         
         
-  - name: add_a_unique_name_7
+  - name: promo_comparison
     title: Promotion Comparison
     type: looker_pie
     model: vmart1
@@ -180,7 +211,7 @@
     show_view_names: true
     inner_radius: 40
     
-  - name: add_a_unique_name_947
+  - name: top_10_employees
     title: Top 10 Employees in Store Sales
     type: looker_bar
     model: vmart1

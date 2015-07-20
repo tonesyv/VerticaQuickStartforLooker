@@ -2,11 +2,14 @@
   title: Online Sales Dash
   layout: tile
   tile_size: 100
+    
 
   filters:
   
   - name: date
+    title: "Sales period"
     type: date_filter
+    default_value: 2003/01/01 to 2007/12/31
   - name: customer_type
     type: field_filter
     explore: online_sales_fact
@@ -26,8 +29,8 @@
     
   elements:
 
-  - name: add_a_unique_name_458
-    title: Total
+  - name: online_sales_total 
+    title: "Online Sales Total"
     type: single_value
     model: vmart1
     explore: online_sales_fact
@@ -42,8 +45,40 @@
     column_limit: ''
     font_size: medium
     
+  - name: online_sales_overtime
+    title: "Online Sales Performance Overtime"
+    type: looker_line
+    model: vmart1
+    explore: online_sales_fact
+    dimensions: [date_dimension_sales.calendar_year_quarter]
+    measures: [online_sales_fact.measure_total]
+    filters:
+      online_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      customer_type: customer_dimension.customer_type
+      date: date_dimension_sales.date_date
+      measure_type: online_sales_fact.measure_type
+    sorts: [date_dimension_sales.calendar_year_quarter]
+    limit: 500
+    column_limit: ''
+    show_null_points: true
+    stacking: ''
+    show_value_labels: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    point_style: none
+    interpolation: linear
+    
   - name: online_sales_by_year
-    title: 'Online Sales Performance (YoY)'
+    title: 'Online Sales Year over Year Comparison'
     type: looker_area
     model: vmart1
     explore: online_sales_fact
@@ -75,8 +110,8 @@
     hide_points: true
     
     
-  - name: add_a_unique_name_45
-    title: Online Sales Regional sales
+  - name: regional_sales
+    title: "Regional Online Sales"
     type: looker_geo_choropleth
     model: vmart1
     explore: online_sales_fact
@@ -98,8 +133,8 @@
     colors: []
     loading: false
   
-  - name: add_a_unique_name_131
-    title: Top 5 customers
+  - name: top_10_customers
+    title: "Top 10 customers in Online Sales"
     type: looker_bar
     model: vmart1
     explore: online_sales_fact
@@ -112,7 +147,7 @@
       measure_type: online_sales_fact.measure_type
       product_type: product_dimension.department_description
     sorts: [online_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     show_null_points: true
     stacking: ''
@@ -129,40 +164,9 @@
     x_axis_scale: auto
     show_null_labels: false
 
-  - name: add_a_unique_name_491
-    title: Top 5 customers multi metrics
-    type: looker_column
-    model: vmart1
-    explore: online_sales_fact
-    dimensions: [customer_dimension.customer_name]
-    measures: [online_sales_fact.total_sales, online_sales_fact.total_cost, online_sales_fact.total_profit]
-    filters:
-      online_sales_fact.transaction_type: '"purchase"'
-    listen: 
-      customer_type: customer_dimension.customer_type
-      measure_type: online_sales_fact.measure_type
-      product_type: product_dimension.department_description  
-    sorts: [online_sales_fact.total_sales desc]
-    limit: 5
-    column_limit: ''
-    show_null_points: true
-    stacking: ''
-    show_value_labels: false
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    show_null_labels: false
-    y_axis_combined: true
-    
-  - name: add_a_unique_name_472
-    title: Top 10 products
+  
+  - name: top_10_products
+    title: "Top 10 products in Online Sales"
     type: table
     model: vmart1
     explore: online_sales_fact
@@ -178,8 +182,8 @@
     limit: 10
     column_limit: ''
 
-  - name: add_a_unique_name_629
-    title: promotions comparison
+  - name: promo_comparison
+    title: "Promotions Comparison in Online Sales"
     type: looker_pie
     model: vmart1
     explore: online_sales_fact
@@ -195,8 +199,8 @@
     show_view_names: true
     inner_radius: 50
 
-  - name: add_a_unique_name_125
-    title: Call Center Performance
+  - name: call_center_performance
+    title: "Call Center Performance in Online Sales"
     type: looker_column
     model: vmart1
     explore: online_sales_fact
