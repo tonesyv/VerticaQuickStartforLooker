@@ -86,6 +86,8 @@
     y_axis_labels: [Online Sales]
     stacking: ''
     x_axis_scale: auto
+    colors: ['#b3a0dd', '#776fdf', '#1ea8df', '#a2dcf3',
+    '#49cec1', '#e9b404'] 
     interpolation: linear
     width: 12
     
@@ -110,7 +112,8 @@
     x_axis_label: Month Number
     y_axis_labels: [Store Sales]
     stacking: ''
-    x_axis_scale: auto
+    colors: ['#b3a0dd', '#776fdf', '#1ea8df', '#a2dcf3',
+    '#49cec1', '#e9b404']
     interpolation: linear
     width: 12
     

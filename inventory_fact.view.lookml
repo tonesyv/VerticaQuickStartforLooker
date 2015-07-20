@@ -27,7 +27,7 @@
     drill_fields: []
 
   - measure: average_qty_in_stock
-    type: avg
+    type: average
     sql: ${TABLE}.qty_in_stock
 
   - measure: max_qty_in_stock

@@ -79,7 +79,7 @@
     
   - name: online_sales_by_year
     title: 'Online Sales Year over Year Comparison'
-    type: looker_area
+    type: looker_line
     model: vmart1
     explore: online_sales_fact
     dimensions: [date_dimension_sales.calendar_month_number_in_year]
@@ -97,7 +97,6 @@
     width: 
     height:
     legend_align:
-    stacking: normal
     x_axis_label: 'Month Number'
     x_axis_datetime: true
     x_axis_datetime_label:

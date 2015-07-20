@@ -60,6 +60,7 @@
   - dimension: product_key
     type: int
     sql: ${TABLE}.product_key
+    
 
   - dimension: product_price
     type: int
@@ -68,6 +69,10 @@
   - dimension: product_version
     type: int
     sql: ${TABLE}.product_version
+
+  - dimension: prod_prim_key 
+    sql: ${product_key} || '-' || ${product_version} 
+    primary_key: true
 
   - dimension: shelf_depth
     type: int
@@ -96,5 +101,5 @@
     drill_fields: []
 
   - measure: avg_competitor_price
-    type: avg
+    type: average
     sql: ${TABLE}.average_competitor_price
