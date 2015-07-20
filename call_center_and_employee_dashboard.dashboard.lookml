@@ -10,12 +10,6 @@
     
 
   filters:
-      
-#  - name: date
-#    title: "Date"
-#    type: date_filter
-#    default_value: last 2 years
-
   - name: date
     title: "Sales Date"
     type: date_filter

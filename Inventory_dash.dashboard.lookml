@@ -6,9 +6,9 @@
     - elements: [average_quantity_in_stock, min_quantity_in_stock, max_quantity_in_stock]
       height: 150
     - elements: [total_inventory_overtime]
-      height: 300
-    - elements: [breakdown_by_department, Breakdown_by_warehouse_location]
       height: 400
+    - elements: [breakdown_by_department, Breakdown_by_warehouse_location]
+      height: 300
     - elements: [breakdown_by_category, Breakdown_by_warehouse_name]
       height: 300
 
@@ -73,8 +73,6 @@
     show_value_labels: true
     show_view_names: false
     show_null_labels: false
-    colors: ['#7FCDAE', '#7ED09C', '#7DD389', '#85D67C', '#9AD97B', '#B1DB7A', '#CADF79',
-      '#E2DF78', '#E5C877', '#E7AF75', '#EB9474', '#EE7772']
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_y_axis_labels: true
@@ -185,7 +183,7 @@
 
 
   - name: total_inventory_overtime
-    title: Inventory Overtime
+    title: Average Inventory Overtime
     type: looker_line
     model: vmart1
     explore: inventory_fact
