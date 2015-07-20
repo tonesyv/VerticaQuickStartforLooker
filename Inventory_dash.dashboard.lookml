@@ -28,7 +28,7 @@
     explore: inventory_fact
     measures: [inventory_fact.average_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     limit: 500
     column_limit: ''
     font_size: small
@@ -40,7 +40,7 @@
     explore: inventory_fact
     measures: [inventory_fact.min_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     limit: 500
     column_limit: ''
     font_size: small
@@ -52,7 +52,7 @@
     explore: inventory_fact
     measures: [inventory_fact.max_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     limit: 500
     column_limit: ''
     font_size: small
@@ -65,7 +65,7 @@
     dimensions: [product_dimension.category_description]
     measures: [inventory_fact.average_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     sorts: [inventory_fact.average_qty_in_stock desc]
     limit: 500
     column_limit: ''
@@ -93,6 +93,8 @@
     dimensions: [product_dimension.category_description, product_dimension.store_department_description]
     pivots: [product_dimension.store_department_description]
     measures: [inventory_fact.average_qty_in_stock]
+    listen: 
+      date: date_dimension.date_date
     sorts: [product_dimension.category_description desc]
     limit: 500
     column_limit: ''
@@ -123,7 +125,7 @@
     dimensions: [warehouse_dimension.warehouse_name]
     measures: [inventory_fact.average_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     sorts: [inventory_fact.average_qty_in_stock desc]
     limit: 500
     column_limit: ''
@@ -154,7 +156,7 @@
     dimensions: [warehouse_dimension.warehouse_state]
     measures: [inventory_fact.average_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     sorts: [inventory_fact.average_qty_in_stock desc]
     limit: 500
     column_limit: ''
@@ -191,7 +193,7 @@
     pivots: [product_dimension.category_description]
     measures: [inventory_fact.average_qty_in_stock]
     listen: 
-      date: inventory_fact.date_date
+      date: date_dimension.date_date
     sorts: [date_dimension.date_month]
     limit: 500
     column_limit: ''

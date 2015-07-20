@@ -87,7 +87,7 @@
   joins:
     - join: product_dimension
       sql_on: inventory_fact.product_key = product_dimension.product_key and inventory_fact.product_version = product_dimension.product_version
-      #relationship: many_to_one
+      relationship: many_to_one
       type: inner
       
     - join: date_dimension

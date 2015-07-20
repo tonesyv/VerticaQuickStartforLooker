@@ -32,7 +32,6 @@
     
 
   elements:
-  
   - name: top_5_call_centers
     title: Top 5 call centers in Online Sales
     type: looker_pie
@@ -43,7 +42,7 @@
     filters:
       online_sales_fact.transaction_type: '"purchase"'
     listen: 
-      date: date_dimension.date_date
+      date: date_dimension_sales.date_date
       measure_type: online_sales_fact.measure_type
       call_center_class: call_center_dimension.cc_class
     sorts: [online_sales_fact.measure_total desc]
@@ -79,9 +78,9 @@
     dimensions: [call_center_dimension.cc_region]
     measures: [online_sales_fact.measure_total]
     filters:
-      store_sales_fact.transaction_type: '"purchase"'
+      online_sales_fact.transaction_type: '"purchase"'
     listen: 
-      date: date_dimension.date_date
+      date: date_dimension_sales.date_date
       measure_type: online_sales_fact.measure_type
       call_center_class: call_center_dimension.cc_class
     sorts: [online_sales_fact.measure_total desc]
@@ -114,7 +113,6 @@
     listen: 
       date: date_dimension.date_date
       measure_type: store_sales_fact.measure_type
-      call_center_class: call_center_dimension.cc_class
     sorts: [store_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
