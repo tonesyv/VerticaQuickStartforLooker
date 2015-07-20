@@ -3,14 +3,11 @@
   layout: grid
   rows: 
     - elements: [store_total, online_total]
-      height: 220
-
+      height: 190
     - elements: [store_regional_sales, online_regional_sales]
       height: 400
-  
     - elements: [top_store_products, top_online_products]
       height: 400
-
     - elements: [order_rate]
       height: 400
       
@@ -32,11 +29,9 @@
       default_value: Sales
       
       
-
   elements:
-
   - name: store_total
-    title: Store total
+    title: Store Sales Total
     type: single_value
     model: vmart1
     explore: store_sales_fact
@@ -48,10 +43,10 @@
     sorts: [store_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
-    font_size: medium
+    font_size: small
     
   - name: online_total
-    title: Online Total
+    title: Online Sales Total
     type: single_value
     model: vmart1
     explore: online_sales_fact
@@ -63,10 +58,10 @@
     sorts: [online_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
-    font_size: medium
+    font_size: small
    
   - name: top_online_products
-    title: top online products
+    title: Online Sales by Product
     type: looker_column
     model: vmart1
     explore: online_sales_fact
@@ -78,14 +73,13 @@
       customer_type: customer_dimension.customer_type
       date: date_dimension_sales.date_date
       measure_type: online_sales_fact.measure_type
-    sorts: [online_sales_fact.measure_total]
-    limit: 10
+    sorts: [online_sales_fact.measure_total desc]
     column_limit: ''
     stacking: ''
     show_value_labels: false
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
+    show_view_names: false
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -94,9 +88,9 @@
     show_x_axis_ticks: true
     x_axis_scale: auto
     show_null_labels: false
-  
+ 
   - name: top_store_products
-    title: top store products
+    title: Store Sales by Product
     type: looker_column
     model: vmart1
     explore: store_sales_fact
@@ -104,12 +98,10 @@
     measures: [store_sales_fact.measure_total]
     filters:
       store_sales_fact.transaction_type: '"purchase"'
-    
     listen:
       measure_type: store_sales_fact.measure_type
       customer_type: customer_dimension.customer_type
       date: date_dimension.date_date
-    
     sorts: [store_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
@@ -117,7 +109,7 @@
     show_value_labels: false
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
+    show_view_names: false
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -128,7 +120,7 @@
     show_null_labels: false
 
   - name: store_regional_sales
-    title: Store regional totals
+    title: Store Regional Sales
     type: looker_geo_choropleth
     model: vmart1
     explore: store_sales_fact
@@ -149,7 +141,7 @@
     loading: false
 
   - name: online_regional_sales
-    title: Online Regional totals
+    title: Online Regional Sales
     type: looker_geo_choropleth
     model: vmart1
     explore: online_sales_fact
@@ -167,7 +159,7 @@
     map_projection: ''
     show_view_names: true
     quantize_colors: false
-    colors: []
+    colors: ['#008000']
     loading: false
     
   - name: order_rate
@@ -176,7 +168,8 @@
     model: vmart1
     explore: store_orders_fact
     dimensions: [vendor_dimension.vendor_name]
-    measures: [store_orders_fact.perfect_order_rate]
+    measures: [store_orders_fact.perfect_order_rate, store_orders_fact.perfect_quantity_rate,
+      store_orders_fact.perfect_expected_date_rate]
     listen: 
       date: store_orders_fact.date_delivered_date
     sorts: [store_orders_fact.perfect_order_rate desc]
@@ -190,10 +183,14 @@
     stacking: ''
     show_value_labels: false
     x_axis_gridlines: false
-    show_view_names: true
+    show_view_names: false
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
     show_x_axis_label: true
     show_x_axis_ticks: true
     x_axis_scale: auto
     show_null_labels: false
+    y_axis_combined: true
+
+    
+

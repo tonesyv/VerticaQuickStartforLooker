@@ -14,7 +14,7 @@
     label: "Online product department"
     html: |
       {{ linked_value }}
-      <a href="/dashboards/vmart1/online_sales_dash?product_type={{ value | encode_uri }}" target= "_new">
+      <a href="/dashboards/vmart1/online_sales_dashboard?product_type={{ value | encode_uri }}" target= "_new">
       <img src="/images/qr-graph-line@2x.png" height=20 width=20></a>
       
       
@@ -22,7 +22,7 @@
     sql: ${TABLE}.department_description
     html: |
       {{ linked_value }}
-      <a href="/dashboards/vmart1/store_sales_dash?product_type={{ value | encode_uri }}" target= "_new">
+      <a href="/dashboards/vmart1/store_sales_dashboard?product_type={{ value | encode_uri }}" target= "_new">
       <img src="/images/qr-graph-line@2x.png" height=20 width=20></a>
     
   - dimension: diet_type

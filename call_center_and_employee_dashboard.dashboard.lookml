@@ -47,7 +47,10 @@
     column_limit: ''
     show_view_names: true
     inner_radius: 40
-  
+    colors: ['#706080', '#353b49', '#635189', '#b3a0dd', '#776fdf', '#1ea8df', '#a2dcf3',
+    '#49cec1', '#e9b404', '#dc7350', '#ed6168']
+
+    
   - name: top_5_employees
     title: "Top 10 Employees in Store Sales"
     type: looker_pie
@@ -65,6 +68,8 @@
     column_limit: ''
     show_view_names: true
     inner_radius: 40
+    colors: ['#706080', '#353b49', '#635189', '#b3a0dd', '#776fdf', '#1ea8df', '#a2dcf3',
+    '#49cec1', '#e9b404', '#dc7350', '#ed6168']
 
 
   - name: online_sales_by_call_center_region
