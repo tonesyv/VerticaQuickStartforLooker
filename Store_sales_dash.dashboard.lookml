@@ -1,5 +1,5 @@
-- dashboard: store_sales_dash
-  title: Store Sales Dash
+- dashboard: store_sales_dashboard
+  title: Store Sales Dashboard
   layout: tile
   tile_size: 100
 

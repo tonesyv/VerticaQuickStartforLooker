@@ -1,5 +1,5 @@
-- dashboard: customer_dash
-  title: Customer Dash
+- dashboard: customer_dashboard
+  title: Customer Dashboard
   layout: grid
   rows: 
     - elements: [total_online_sales, total_store_sales]
@@ -65,7 +65,6 @@
     limit: 500
     width: 6 
     #height: 2
-    
     
   - name: online_sales_by_year
     title: 'Online Sales Performance (YoY)'

@@ -8,20 +8,17 @@
       height: 400
 
     
-
   filters:
   - name: date
-    title: "Sales Date"
+    title: "Sales period"
     type: date_filter
-    #default_value: how to select 'is in range'
-    
+    default_value: 2003/01/01 to 2007/12/31
   - name: measure_type
     title: "Sales Measure"
     type: field_filter
     explore: store_sales_fact
     field: store_sales_fact.measure_type
     default_value: Sales  
-  
   - name: call_center_class
     title: "Call Center Class"
     type: field_filter
@@ -33,7 +30,7 @@
 
   elements:
   - name: top_5_call_centers
-    title: Top 5 call centers in Online Sales
+    title: "Top 10 Call Centers in Online Sales"
     type: looker_pie
     model: vmart1
     explore: online_sales_fact
@@ -46,13 +43,13 @@
       measure_type: online_sales_fact.measure_type
       call_center_class: call_center_dimension.cc_class
     sorts: [online_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     show_view_names: true
     inner_radius: 40
   
   - name: top_5_employees
-    title: Top 5 employees in Store Sales
+    title: "Top 10 Employees in Store Sales"
     type: looker_pie
     model: vmart1
     explore: store_sales_fact
@@ -64,14 +61,14 @@
       date: date_dimension.date_date
       measure_type: store_sales_fact.measure_type
     sorts: [store_sales_fact.measure_total desc]
-    limit: 5
+    limit: 10
     column_limit: ''
     show_view_names: true
     inner_radius: 40
 
 
   - name: online_sales_by_call_center_region
-    title: Online Sales by call center region
+    title: "Online Sales by Call Center Region"
     type: looker_column
     model: vmart1
     explore: online_sales_fact
@@ -102,7 +99,7 @@
     show_null_labels: false
 
   - name: store_sales_by_employee_region
-    title: Store Sales by Employee Region
+    title: "Store Sales by Employee Region"
     type: looker_column
     model: vmart1
     explore: store_sales_fact

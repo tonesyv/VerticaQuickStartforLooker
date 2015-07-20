@@ -1,7 +1,9 @@
-- dashboard: product
+- dashboard: product_dashboard
   title: Product Dashboard
   layout: grid
   rows: 
+    - elements: [total_online_sales, total_store_sales]
+      height: 190
     - elements: [online_sales_yoy_comparison, store_sales_yoy_comparison]
       height: 400
     - elements: [top_10_products_online, top_10_products_store]
@@ -10,24 +12,16 @@
     
 
   filters:
-      
-#  - name: date
-#    title: "Date"
-#    type: date_filter
-#    default_value: last 2 years
-
   - name: date
     title: "Sales period"
     type: date_filter
     default_value: 2003/01/01 to 2007/12/31
-    
   - name: measure_type
     title: "Sales Measure"
     type: field_filter
     explore: store_sales_fact
     field: store_sales_fact.measure_type
     default_value: Sales  
-   
   - name: product_type
     title: "Product Category"
     type: field_filter
@@ -36,6 +30,39 @@
      
 
   elements:
+  - name: total_online_sales
+    title: 'Total Online Sales'
+    type: single_value
+    model: vmart1
+    explore: online_sales_fact
+    measures: [online_sales_fact.measure_total]
+    filters:
+      online_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      date: date_dimension_sales.date_date
+      measure_type: online_sales_fact.measure_type
+      product_type: product_dimension.category_description
+    limit: 500
+    width: 6
+    #height: 2
+    
+  - name: total_store_sales
+    title: 'Total Store Sales'
+    type: single_value
+    model: vmart1
+    explore: store_sales_fact
+    explore: store_sales_fact
+    measures: [store_sales_fact.measure_total]
+    filters:
+      store_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      date: date_dimension.date_date
+      measure_type: store_sales_fact.measure_type
+      product_type: product_dimension.category_description
+    limit: 500
+    width: 6 
+    #height: 2
+    
   
   - name: online_sales_yoy_comparison
     title: "Online Sales Year over Year Comparison"

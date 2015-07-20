@@ -15,14 +15,11 @@
     title: "Order delivered date"
     type: date_filter
     default_value: 2003/01/01 to 2007/12/31
-    
   - name: vendor_name
     title: "Vendor Name"
     type: field_filter
     explore: store_orders_fact
     field: vendor_dimension.vendor_name
-    #default_value:   
-  
   - name: measure_type
     title: "Measure"
     type: field_filter

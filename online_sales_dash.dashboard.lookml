@@ -1,5 +1,5 @@
-- dashboard: online_sales_dash
-  title: Online Sales Dash
+- dashboard: online_sales_dashboard
+  title: Online Sales Dashboard
   layout: tile
   tile_size: 100
     
