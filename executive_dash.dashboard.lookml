@@ -4,6 +4,8 @@
   rows: 
     - elements: [store_total, online_total]
       height: 190
+    - elements: [store_sales_overtime, online_sales_overtime]
+      height: 400
     - elements: [store_regional_sales, online_regional_sales]
       height: 400
     - elements: [top_store_products, top_online_products]
@@ -21,7 +23,6 @@
       type: field_filter
       explore: store_sales_fact
       field: customer_dimension.customer_type
-      #default_value:
     - name: measure_type
       type: field_filter
       explore: store_sales_fact
@@ -43,7 +44,7 @@
     sorts: [store_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
-    font_size: small
+    font_size: medium
     
   - name: online_total
     title: Online Sales Total
@@ -58,8 +59,9 @@
     sorts: [online_sales_fact.measure_total desc]
     limit: 500
     column_limit: ''
-    font_size: small
+    font_size: medium
    
+
   - name: top_online_products
     title: Online Sales by Product
     type: looker_column
@@ -161,6 +163,70 @@
     quantize_colors: false
     colors: ['#008000']
     loading: false
+ 
+  - name: online_sales_overtime
+    title: "Online Sales Performance Overtime"
+    type: looker_line
+    model: vmart1
+    explore: online_sales_fact
+    dimensions: [date_dimension_sales.calendar_year_quarter]
+    measures: [online_sales_fact.measure_total]
+    filters:
+      online_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      customer_type: customer_dimension.customer_type
+      date: date_dimension_sales.date_date
+      measure_type: online_sales_fact.measure_type
+    sorts: [date_dimension_sales.calendar_year_quarter]
+    limit: 500
+    column_limit: ''
+    show_null_points: true
+    stacking: ''
+    show_value_labels: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    point_style: none
+    interpolation: linear
+    
+  - name: store_sales_overtime
+    title: Store Sales Performance Overtime
+    type: looker_line
+    model: vmart1
+    explore: store_sales_fact
+    dimensions: [date_dimension.calendar_year_quarter]
+    measures: [store_sales_fact.measure_total]
+    filters:
+      store_sales_fact.transaction_type: '"purchase"'
+    listen: 
+      customer_type: customer_dimension.customer_type
+      date: date_dimension.date_date
+      measure_type: store_sales_fact.measure_type
+    sorts: [date_dimension.calendar_year_quarter]
+    limit: 500
+    column_limit: ''
+    show_null_points: true
+    stacking: ''
+    show_value_labels: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    point_style: none
+    interpolation: linear
     
   - name: order_rate
     title: Perfect Order Rate by vendor
