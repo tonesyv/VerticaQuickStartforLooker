@@ -1,1 +1,1 @@
-# VMart_Quick_Start
+# VerticaQuickStartforLooker
