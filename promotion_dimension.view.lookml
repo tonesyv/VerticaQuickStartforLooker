@@ -27,7 +27,7 @@
     sql: ${TABLE}.promotion_begin_date
 
   - dimension: promotion_cost
-    type: int
+    type: number
     sql: ${TABLE}.promotion_cost
 
   - dimension_group: promotion_end
@@ -37,7 +37,7 @@
     sql: ${TABLE}.promotion_end_date
 
   - dimension: promotion_key
-    type: int
+    type: number
     sql: ${TABLE}.promotion_key
     primary_key: true
     

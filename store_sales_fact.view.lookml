@@ -3,51 +3,51 @@
   fields:
 
   - dimension: cost_dollar_amount
-    type: int
+    type: number
     sql: ${TABLE}.cost_dollar_amount
 
   - dimension: customer_key
-    type: int
+    type: number
     sql: ${TABLE}.customer_key
 
   - dimension: date_key
-    type: int
+    type: number
     sql: ${TABLE}.date_key
 
   - dimension: employee_key
-    type: int
+    type: number
     sql: ${TABLE}.employee_key
 
   - dimension: gross_profit_dollar_amount
-    type: int
+    type: number
     sql: ${TABLE}.gross_profit_dollar_amount
 
   - dimension: pos_transaction_number
-    type: int
+    type: number
     sql: ${TABLE}.pos_transaction_number
 
   - dimension: product_key
-    type: int
+    type: number
     sql: ${TABLE}.product_key
 
   - dimension: product_version
-    type: int
+    type: number
     sql: ${TABLE}.product_version
 
   - dimension: promotion_key
-    type: int
+    type: number
     sql: ${TABLE}.promotion_key
 
   - dimension: sales_dollar_amount
-    type: int
+    type: number
     sql: ${TABLE}.sales_dollar_amount
 
   - dimension: sales_quantity
-    type: int
+    type: number
     sql: ${TABLE}.sales_quantity
 
   - dimension: store_key
-    type: int
+    type: number
     sql: ${TABLE}.store_key
 
   - dimension: tender_type

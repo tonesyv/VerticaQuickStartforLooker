@@ -4,7 +4,7 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension: address
@@ -19,4 +19,3 @@
   - measure: count
     type: count
     drill_fields: [id, surname, name]
-

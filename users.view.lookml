@@ -4,11 +4,11 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.ID
 
   - dimension: age
-    type: int
+    type: number
     sql: ${TABLE}.AGE
 
   - dimension_group: created
@@ -22,4 +22,3 @@
   - measure: count
     type: count
     drill_fields: [id, name, orders.count]
-

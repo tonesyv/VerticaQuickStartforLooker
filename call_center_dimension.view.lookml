@@ -3,7 +3,7 @@
   fields:
 
   - dimension: call_center_key
-    type: int
+    type: number
     sql: ${TABLE}.call_center_key
     primary_key: true
     
@@ -23,7 +23,7 @@
     sql: ${TABLE}.cc_closed_date
 
   - dimension: cc_employees
-    type: int
+    type: number
     sql: ${TABLE}.cc_employees
 
   - dimension: cc_hours

@@ -9,7 +9,7 @@
     sql: ${TABLE}.warehouse_city
 
   - dimension: warehouse_key
-    type: int
+    type: number
     sql: ${TABLE}.warehouse_key
     primary_key: true
     

@@ -9,14 +9,14 @@
     sql: ${TABLE}.end_date
 
   - dimension: online_page_key
-    type: int
+    type: number
     sql: ${TABLE}.online_page_key
 
   - dimension: page_description
     sql: ${TABLE}.page_description
 
   - dimension: page_number
-    type: int
+    type: number
     sql: ${TABLE}.page_number
 
   - dimension: page_type
@@ -31,4 +31,3 @@
   - measure: count
     type: count
     drill_fields: []
-

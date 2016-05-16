@@ -4,15 +4,15 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension: acc_now_delinq
-    type: int
+    type: number
     sql: ${TABLE}.accNowDelinq
 
   - dimension: acc_open_past24_mths
-    type: int
+    type: number
     sql: ${TABLE}.accOpenPast24Mths
 
   - dimension: accept_d
@@ -47,18 +47,18 @@
     sql: ${TABLE}.bcUtil
 
   - dimension: chargeoff_within12_mths
-    type: int
+    type: number
     sql: ${TABLE}.chargeoffWithin12Mths
 
   - dimension: collections12_mths_ex_med
-    type: int
+    type: number
     sql: ${TABLE}.collections12MthsExMed
 
   - dimension: credit_pull_d
     sql: ${TABLE}.creditPullD
 
   - dimension: delinq2_yrs
-    type: int
+    type: number
     sql: ${TABLE}.delinq2Yrs
 
   - dimension: delinq_amnt
@@ -76,7 +76,7 @@
     sql: ${TABLE}.earliestCrLine
 
   - dimension: emp_length
-    type: int
+    type: number
     sql: ${TABLE}.empLength
 
   - dimension: emp_title
@@ -90,11 +90,11 @@
     sql: ${TABLE}.expDefaultRate
 
   - dimension: fico_range_high
-    type: int
+    type: number
     sql: ${TABLE}.ficoRangeHigh
 
   - dimension: fico_range_low
-    type: int
+    type: number
     sql: ${TABLE}.ficoRangeLow
 
   - dimension: funded_amount
@@ -114,7 +114,7 @@
     sql: ${TABLE}.initialListStatus
 
   - dimension: inq_last6_mths
-    type: int
+    type: number
     sql: ${TABLE}.inqLast6Mths
 
   - dimension: installment
@@ -126,7 +126,7 @@
     sql: ${TABLE}.intRate
 
   - dimension: investor_count
-    type: int
+    type: number
     sql: ${TABLE}.investorCount
 
   - dimension: is_inc_v
@@ -144,115 +144,115 @@
     sql: ${TABLE}.looker_is_pull_all
 
   - dimension: member_id
-    type: int
+    type: number
     sql: ${TABLE}.memberId
 
   - dimension: mo_sin_old_il_acct
-    type: int
+    type: number
     sql: ${TABLE}.moSinOldIlAcct
 
   - dimension: mo_sin_old_rev_tl_op
-    type: int
+    type: number
     sql: ${TABLE}.moSinOldRevTlOp
 
   - dimension: mo_sin_rcnt_rev_tl_op
-    type: int
+    type: number
     sql: ${TABLE}.moSinRcntRevTlOp
 
   - dimension: mo_sin_rcnt_tl
-    type: int
+    type: number
     sql: ${TABLE}.moSinRcntTl
 
   - dimension: mort_acc
-    type: int
+    type: number
     sql: ${TABLE}.mortAcc
 
   - dimension: mths_since_last_delinq
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceLastDelinq
 
   - dimension: mths_since_last_major_derog
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceLastMajorDerog
 
   - dimension: mths_since_last_record
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceLastRecord
 
   - dimension: mths_since_recent_bc
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceRecentBc
 
   - dimension: mths_since_recent_bc_dlq
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceRecentBcDlq
 
   - dimension: mths_since_recent_inq
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceRecentInq
 
   - dimension: mths_since_recent_revol_delinq
-    type: int
+    type: number
     sql: ${TABLE}.mthsSinceRecentRevolDelinq
 
   - dimension: num_accts_ever120_ppd
-    type: int
+    type: number
     sql: ${TABLE}.numAcctsEver120Ppd
 
   - dimension: num_actv_bc_tl
-    type: int
+    type: number
     sql: ${TABLE}.numActvBcTl
 
   - dimension: num_actv_rev_tl
-    type: int
+    type: number
     sql: ${TABLE}.numActvRevTl
 
   - dimension: num_bc_sats
-    type: int
+    type: number
     sql: ${TABLE}.numBcSats
 
   - dimension: num_bc_tl
-    type: int
+    type: number
     sql: ${TABLE}.numBcTl
 
   - dimension: num_il_tl
-    type: int
+    type: number
     sql: ${TABLE}.numIlTl
 
   - dimension: num_op_rev_tl
-    type: int
+    type: number
     sql: ${TABLE}.numOpRevTl
 
   - dimension: num_rev_accts
-    type: int
+    type: number
     sql: ${TABLE}.numRevAccts
 
   - dimension: num_rev_tl_bal_gt0
-    type: int
+    type: number
     sql: ${TABLE}.numRevTlBalGt0
 
   - dimension: num_sats
-    type: int
+    type: number
     sql: ${TABLE}.numSats
 
   - dimension: num_tl120dpd2m
-    type: int
+    type: number
     sql: ${TABLE}.numTl120dpd2m
 
   - dimension: num_tl30dpd
-    type: int
+    type: number
     sql: ${TABLE}.numTl30dpd
 
   - dimension: num_tl90g_dpd24m
-    type: int
+    type: number
     sql: ${TABLE}.numTl90gDpd24m
 
   - dimension: num_tl_op_past12m
-    type: int
+    type: number
     sql: ${TABLE}.numTlOpPast12m
 
   - dimension: open_acc
-    type: int
+    type: number
     sql: ${TABLE}.openAcc
 
   - dimension: pct_tl_nvr_dlq
@@ -264,11 +264,11 @@
     sql: ${TABLE}.percentBcGt75
 
   - dimension: pub_rec
-    type: int
+    type: number
     sql: ${TABLE}.pubRec
 
   - dimension: pub_rec_bankruptcies
-    type: int
+    type: number
     sql: ${TABLE}.pubRecBankruptcies
 
   - dimension: purpose
@@ -296,11 +296,11 @@
     sql: ${TABLE}.subGrade
 
   - dimension: tax_liens
-    type: int
+    type: number
     sql: ${TABLE}.taxLiens
 
   - dimension: term
-    type: int
+    type: number
     sql: ${TABLE}.term
 
   - dimension: tot_coll_amt
@@ -312,11 +312,11 @@
     sql: ${TABLE}.totCurBal
 
   - dimension: tot_hi_cred_lim
-    type: int
+    type: number
     sql: ${TABLE}.totHiCredLim
 
   - dimension: total_acc
-    type: int
+    type: number
     sql: ${TABLE}.totalAcc
 
   - dimension: total_bal_ex_mort
@@ -324,7 +324,7 @@
     sql: ${TABLE}.totalBalExMort
 
   - dimension: total_bc_limit
-    type: int
+    type: number
     sql: ${TABLE}.totalBcLimit
 
   - dimension: total_il_high_credit_limit
@@ -332,10 +332,9 @@
     sql: ${TABLE}.totalIlHighCreditLimit
 
   - dimension: total_rev_hi_lim
-    type: int
+    type: number
     sql: ${TABLE}.totalRevHiLim
 
   - measure: count
     type: count
     drill_fields: [id]
-

@@ -4,11 +4,11 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.id
 
   - dimension: acc_now_delinq
-    type: int
+    type: number
     sql: ${TABLE}.acc_now_delinq
 
   - dimension: acc_open_past_24mths
@@ -40,7 +40,7 @@
     sql: ${TABLE}.bc_util
 
   - dimension: chargeoff_within_12_mths
-    type: int
+    type: number
     sql: ${TABLE}.chargeoff_within_12_mths
 
   - dimension: collection_recovery_fee
@@ -48,15 +48,15 @@
     sql: ${TABLE}.collection_recovery_fee
 
   - dimension: collections_12_mths_ex_med
-    type: int
+    type: number
     sql: ${TABLE}.collections_12_mths_ex_med
 
   - dimension: delinq_2yrs
-    type: int
+    type: number
     sql: ${TABLE}.delinq_2yrs
 
   - dimension: delinq_amnt
-    type: int
+    type: number
     sql: ${TABLE}.delinq_amnt
 
   - dimension: desc
@@ -84,15 +84,15 @@
     sql: ${TABLE}.exp_d
 
   - dimension: fico_range_high
-    type: int
+    type: number
     sql: ${TABLE}.fico_range_high
 
   - dimension: fico_range_low
-    type: int
+    type: number
     sql: ${TABLE}.fico_range_low
 
   - dimension: funded_amnt
-    type: int
+    type: number
     sql: ${TABLE}.funded_amnt
 
   - dimension: funded_amnt_inv
@@ -109,7 +109,7 @@
     sql: ${TABLE}.initial_list_status
 
   - dimension: inq_last_6mths
-    type: int
+    type: number
     sql: ${TABLE}.inq_last_6mths
 
   - dimension: installment
@@ -135,11 +135,11 @@
     sql: ${TABLE}.last_credit_pull_d
 
   - dimension: last_fico_range_high
-    type: int
+    type: number
     sql: ${TABLE}.last_fico_range_high
 
   - dimension: last_fico_range_low
-    type: int
+    type: number
     sql: ${TABLE}.last_fico_range_low
 
   - dimension: last_pymnt_amnt
@@ -159,14 +159,14 @@
     sql: ${TABLE}.list_d
 
   - dimension: loan_amnt
-    type: int
+    type: number
     sql: ${TABLE}.loan_amnt
 
   - dimension: loan_status
     sql: ${TABLE}.loan_status
 
   - dimension: member_id
-    type: int
+    type: number
     sql: ${TABLE}.member_id
 
   - dimension: mo_sin_old_il_acct
@@ -254,7 +254,7 @@
     sql: ${TABLE}.num_tl_op_past_12m
 
   - dimension: open_acc
-    type: int
+    type: number
     sql: ${TABLE}.open_acc
 
   - dimension: out_prncp
@@ -272,15 +272,15 @@
     sql: ${TABLE}.percent_bc_gt_75
 
   - dimension: policy_code
-    type: int
+    type: number
     sql: ${TABLE}.policy_code
 
   - dimension: pub_rec
-    type: int
+    type: number
     sql: ${TABLE}.pub_rec
 
   - dimension: pub_rec_bankruptcies
-    type: int
+    type: number
     sql: ${TABLE}.pub_rec_bankruptcies
 
   - dimension: purpose
@@ -295,7 +295,7 @@
     sql: ${TABLE}.recoveries
 
   - dimension: revol_bal
-    type: int
+    type: number
     sql: ${TABLE}.revol_bal
 
   - dimension: revol_util
@@ -305,7 +305,7 @@
     sql: ${TABLE}.sub_grade
 
   - dimension: tax_liens
-    type: int
+    type: number
     sql: ${TABLE}.tax_liens
 
   - dimension: term
@@ -324,7 +324,7 @@
     sql: ${TABLE}.tot_hi_cred_lim
 
   - dimension: total_acc
-    type: int
+    type: number
     sql: ${TABLE}.total_acc
 
   - dimension: total_bal_ex_mort
@@ -365,4 +365,3 @@
   - measure: count
     type: count
     drill_fields: [id]
-

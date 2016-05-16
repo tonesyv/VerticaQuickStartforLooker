@@ -7,7 +7,7 @@
     sql: ${TABLE}.THIS_FLOAT
 
   - dimension: this_int
-    type: int
+    type: number
     sql: ${TABLE}.THIS_INT
 
   - dimension: this_string
@@ -16,4 +16,3 @@
   - measure: count
     type: count
     drill_fields: []
-

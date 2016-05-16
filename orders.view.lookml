@@ -4,7 +4,7 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.ID
 
   - dimension_group: created
@@ -13,18 +13,17 @@
     sql: ${TABLE}.CREATED_AT
 
   - dimension: order_amount
-    type: int
+    type: number
     sql: ${TABLE}.ORDER_AMOUNT
 
   - dimension: status
     sql: ${TABLE}.STATUS
 
   - dimension: user_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.USER_ID
 
   - measure: count
     type: count
     drill_fields: [id, users.name, users.id, order_items.count]
-

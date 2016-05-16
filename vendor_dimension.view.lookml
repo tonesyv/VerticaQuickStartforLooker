@@ -3,7 +3,7 @@
   fields:
 
   - dimension: deal_size
-    type: int
+    type: number
     sql: ${TABLE}.deal_size
 
   - dimension_group: last_deal_update
@@ -19,7 +19,7 @@
     sql: ${TABLE}.vendor_city
 
   - dimension: vendor_key
-    type: int
+    type: number
     sql: ${TABLE}.vendor_key
     primary_key: true
 

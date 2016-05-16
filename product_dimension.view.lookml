@@ -3,7 +3,7 @@
   fields:
 
   - dimension: average_competitor_price
-    type: int
+    type: number
     sql: ${TABLE}.average_competitor_price
 
   - dimension: category_description
@@ -29,19 +29,19 @@
     sql: ${TABLE}.diet_type
 
   - dimension: discontinued_flag
-    type: int
+    type: number
     sql: ${TABLE}.discontinued_flag
 
   - dimension: fat_content
-    type: int
+    type: number
     sql: ${TABLE}.fat_content
 
   - dimension: highest_competitor_price
-    type: int
+    type: number
     sql: ${TABLE}.highest_competitor_price
 
   - dimension: lowest_competitor_price
-    type: int
+    type: number
     sql: ${TABLE}.lowest_competitor_price
 
   - dimension: package_size
@@ -51,23 +51,23 @@
     sql: ${TABLE}.package_type_description
 
   - dimension: product_cost
-    type: int
+    type: number
     sql: ${TABLE}.product_cost
 
   - dimension: product_description
     sql: ${TABLE}.product_description
 
   - dimension: product_key
-    type: int
+    type: number
     sql: ${TABLE}.product_key
     
 
   - dimension: product_price
-    type: int
+    type: number
     sql: ${TABLE}.product_price
 
   - dimension: product_version
-    type: int
+    type: number
     sql: ${TABLE}.product_version
 
   - dimension: prod_prim_key 
@@ -75,22 +75,22 @@
     primary_key: true
 
   - dimension: shelf_depth
-    type: int
+    type: number
     sql: ${TABLE}.shelf_depth
 
   - dimension: shelf_height
-    type: int
+    type: number
     sql: ${TABLE}.shelf_height
 
   - dimension: shelf_width
-    type: int
+    type: number
     sql: ${TABLE}.shelf_width
 
   - dimension: sku_number
     sql: ${TABLE}.sku_number
 
   - dimension: weight
-    type: int
+    type: number
     sql: ${TABLE}.weight
 
   - dimension: weight_units_of_measure

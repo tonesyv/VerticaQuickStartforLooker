@@ -6,7 +6,7 @@
     sql: ${TABLE}.data_type_guess
 
   - dimension: frequency
-    type: int
+    type: number
     sql: ${TABLE}.frequency
 
   - dimension: key_name
@@ -15,4 +15,3 @@
   - measure: count
     type: count
     drill_fields: [key_name]
-

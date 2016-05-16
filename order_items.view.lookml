@@ -4,20 +4,20 @@
 
   - dimension: id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.ID
 
   - dimension: amount
-    type: int
+    type: number
     sql: ${TABLE}.AMOUNT
 
   - dimension: order_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.ORDER_ID
 
   - dimension: sku_num
-    type: int
+    type: number
     sql: ${TABLE}.SKU_NUM
 
   - measure: count
@@ -27,4 +27,3 @@
   - measure: total_amount
     sql: ${amount}
     type: sum
-

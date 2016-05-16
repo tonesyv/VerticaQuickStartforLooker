@@ -3,14 +3,14 @@
   fields:
 
   - dimension: annual_income
-    type: int
+    type: number
     sql: ${TABLE}.annual_income
 
   - dimension: customer_address
     sql: ${TABLE}.customer_address
 
   - dimension: customer_age
-    type: int
+    type: number
     sql: ${TABLE}.customer_age
   
   - dimension: customer_age_range
@@ -27,7 +27,7 @@
 
   - dimension: customer_key
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.customer_key
 
   - dimension: customer_name
@@ -49,18 +49,18 @@
     sql: ${TABLE}.customer_type
 
   - dimension: deal_size
-    type: int
+    type: number
     sql: ${TABLE}.deal_size
 
   - dimension: deal_stage
     sql: ${TABLE}.deal_stage
 
   - dimension: household_id
-    type: int
+    type: number
     sql: ${TABLE}.household_id
 
   - dimension: largest_bill_amount
-    type: int
+    type: number
     sql: ${TABLE}.largest_bill_amount
 
   - dimension_group: last_deal_update
@@ -73,14 +73,14 @@
     sql: ${TABLE}.marital_status
 
   - dimension: number_of_children
-    type: int
+    type: number
     sql: ${TABLE}.number_of_children
 
   - dimension: occupation
     sql: ${TABLE}.occupation
 
   - dimension: store_membership_card
-    type: int
+    type: number
     sql: ${TABLE}.store_membership_card
 
   - dimension: title

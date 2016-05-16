@@ -18,10 +18,9 @@
     sql: ${TABLE}.owner
 
   - dimension: size
-    type: int
+    type: number
     sql: ${TABLE}.size
 
   - measure: count
     type: count
     drill_fields: []
-

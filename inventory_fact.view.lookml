@@ -3,23 +3,23 @@
   fields:
 
   - dimension: date_key
-    type: int
+    type: number
     sql: ${TABLE}.date_key
 
   - dimension: product_key
-    type: int
+    type: number
     sql: ${TABLE}.product_key
 
   - dimension: product_version
-    type: int
+    type: number
     sql: ${TABLE}.product_version
 
   - dimension: qty_in_stock
-    type: int
+    type: number
     sql: ${TABLE}.qty_in_stock
 
   - dimension: warehouse_key
-    type: int
+    type: number
     sql: ${TABLE}.warehouse_key
 
   - measure: count

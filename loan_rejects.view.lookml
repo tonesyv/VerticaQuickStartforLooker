@@ -25,11 +25,11 @@
     sql: ${TABLE}."Loan Title"
 
   - dimension: policy_code
-    type: int
+    type: number
     sql: ${TABLE}."Policy Code"
 
   - dimension: risk_score
-    type: int
+    type: number
     sql: ${TABLE}.Risk_Score
 
   - dimension: state
@@ -38,4 +38,3 @@
   - measure: count
     type: count
     drill_fields: []
-

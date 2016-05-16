@@ -12,7 +12,7 @@
     sql: ${TABLE}.ship_type
 
   - dimension: shipping_key
-    type: int
+    type: number
     sql: ${TABLE}.shipping_key
     primary_key: true
     

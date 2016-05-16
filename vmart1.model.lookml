@@ -98,6 +98,3 @@
       foreign_key: inventory_fact.warehouse_key
       type: inner
     
-    - join: latest_date_fact
-      sql_on: ${date_dimension.date_date} = ${latest_date_fact.latest_date}
-      relationship: many_to_one

@@ -21,7 +21,7 @@
     sql: ${TABLE}.date_shipped
 
   - dimension: employee_key
-    type: int
+    type: number
     sql: ${TABLE}.employee_key
 
   - dimension_group: expected_delivery
@@ -31,58 +31,58 @@
     sql: ${TABLE}.expected_delivery_date
 
   - dimension: order_number
-    type: int
+    type: number
     sql: ${TABLE}.order_number
 
   - dimension: overstock_ceiling
-    type: int
+    type: number
     sql: ${TABLE}.overstock_ceiling
 
   - dimension: product_key
-    type: int
+    type: number
     sql: ${TABLE}.product_key
 
   - dimension: product_version
-    type: int
+    type: number
     sql: ${TABLE}.product_version
 
   - dimension: quantity_delivered
-    type: int
+    type: number
     sql: ${TABLE}.quantity_delivered
 
   - dimension: quantity_in_stock
-    type: int
+    type: number
     sql: ${TABLE}.quantity_in_stock
 
   - dimension: quantity_ordered
-    type: int
+    type: number
     sql: ${TABLE}.quantity_ordered
 
   - dimension: reorder_level
-    type: int
+    type: number
     sql: ${TABLE}.reorder_level
 
   - dimension: shipper_name
     sql: ${TABLE}.shipper_name
 
   - dimension: shipping_cost
-    type: int
+    type: number
     sql: ${TABLE}.shipping_cost
 
   - dimension: store_key
-    type: int
+    type: number
     sql: ${TABLE}.store_key
 
   - dimension: total_order_cost
-    type: int
+    type: number
     sql: ${TABLE}.total_order_cost
 
   - dimension: unit_price
-    type: int
+    type: number
     sql: ${TABLE}.unit_price
 
   - dimension: vendor_key
-    type: int
+    type: number
     sql: ${TABLE}.vendor_key
 
   - measure: count

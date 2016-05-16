@@ -3,14 +3,14 @@
   fields:
 
   - dimension: annual_salary
-    type: int
+    type: number
     sql: ${TABLE}.annual_salary
 
   - dimension: courtesy_title
     sql: ${TABLE}.courtesy_title
 
   - dimension: employee_age
-    type: int
+    type: number
     sql: ${TABLE}.employee_age
 
   - dimension: employee_city
@@ -24,7 +24,7 @@
 
   - dimension: employee_key
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.employee_key
 
   - dimension: employee_last_name
@@ -59,15 +59,15 @@
     sql: ${TABLE}.job_title
 
   - dimension: reports_to
-    type: int
+    type: number
     sql: ${TABLE}.reports_to
 
   - dimension: salaried_flag
-    type: int
+    type: number
     sql: ${TABLE}.salaried_flag
 
   - dimension: vacation_days
-    type: int
+    type: number
     sql: ${TABLE}.vacation_days
 
   - measure: count
